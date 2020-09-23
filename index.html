@@ -40,22 +40,19 @@
       //   Bonus Challenge
       const playerName = prompt("Spartiate quel est votre nom ?");
       const randomNumber = Math.floor(Math.random() * 100) + 1;
-      let playerNumber = prompt("Spartiate quel est votre prix ?!");
-      let countNumber = 1;
+      let countNumber = 0;
 
-      function checkPrice() {
+      function checkPrice(playerName, randomNumber) {
+        let playerNumber = prompt("Spartiate quel est votre prix ?!");
+        countNumber++;
         switch (true) {
           case +playerNumber > randomNumber:
             console.log("Le prix est inférieur !");
-            playerNumber = prompt("Nouveau prix ?");
-            countNumber += 1;
-            checkPrice();
+            checkPrice(playerName, randomNumber);
             break;
           case +playerNumber < randomNumber:
             console.log("Le prix est supérieur !");
-            playerNumber = prompt("Nouveau prix ?");
-            countNumber += 1;
-            checkPrice();
+            checkPrice(playerName, randomNumber);
             break;
           case +playerNumber === randomNumber:
             console.log(
@@ -64,12 +61,11 @@
             break;
           default:
             throw new Error("Mauvaise entrée.");
-            countNumber += 1;
-            checkPrice();
+            checkPrice(playerName, randomNumber);
         }
       }
-      //   console.log(randomNumber);
-      checkPrice();
+      // console.log(randomNumber);
+      checkPrice(playerName, randomNumber);
     </script>
   </body>
 </html>
