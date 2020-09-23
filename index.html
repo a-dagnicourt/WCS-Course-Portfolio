@@ -6,66 +6,20 @@
     <title>Simple Calculator</title>
   </head>
   <body>
-    <script>
-      //   let firstValue = +prompt("Première valeur ?");
-      //   let operator = prompt("Un opérateur ?");
-      //   let secondValue = +prompt("Seconde valeur ?");
-
-      //   //   if (operator === "+") {
-      //   //     console.log(firstValue + secondValue);
-      //   //   } else {
-      //   //     console.log(firstValue - secondValue);
-      //   //   }
-
-      //   switch (operator) {
-      //     case "+":
-      //       console.log(firstValue + secondValue);
-      //       break;
-      //     case "-":
-      //       console.log(firstValue - secondValue);
-      //       break;
-      //     case "/":
-      //       console.log(firstValue / secondValue);
-      //       break;
-      //     case "*":
-      //       console.log(firstValue * secondValue);
-      //       break;
-      //     case "%":
-      //       console.log(firstValue % secondValue);
-      //       break;
-      //     default:
-      //       throw new Error("Invalid operator");
-      //   }
-
-      //   Bonus Challenge
-      const playerName = prompt("Spartiate quel est votre nom ?");
-      const randomNumber = Math.floor(Math.random() * 100) + 1;
-      let countNumber = 0;
-
-      function checkPrice(playerName, randomNumber) {
-        let playerNumber = prompt("Spartiate quel est votre prix ?!");
-        countNumber++;
-        switch (true) {
-          case +playerNumber > randomNumber:
-            console.log("Le prix est inférieur !");
-            checkPrice(playerName, randomNumber);
-            break;
-          case +playerNumber < randomNumber:
-            console.log("Le prix est supérieur !");
-            checkPrice(playerName, randomNumber);
-            break;
-          case +playerNumber === randomNumber:
-            console.log(
-              `Juste prix !!! ${playerName} gagne en ${countNumber} coups !`
-            );
-            break;
-          default:
-            throw new Error("Mauvaise entrée.");
-            checkPrice(playerName, randomNumber);
-        }
-      }
-      // console.log(randomNumber);
-      checkPrice(playerName, randomNumber);
-    </script>
+    <header>
+      <h1 class="mainTitle">Workshop JavaScript</h1>
+      <h2 class="subTitle">Simple Calculator</h2>
+    </header>
+    <main>
+      <div class="choiceBox">Choose your feature :</div>
+      <button class="button">Calculator</button>
+      <button class="button">The price is right</button>
+    </main>
+    <footer>
+        <div class="footerDiv"><a href="https://www.wildcodeschool.com/fr-FR" title="Wild Code School Website">Wild Code School</a></div>
+        <div class="footerDiv"><a href="https://github.com/a-dagnicourt" title="Dany's github">Alexandre "Dany" Dagnicourt</a></div>
+        <div class="footerDiv">23/09/20</div>
+    </footer>
+    <script src="script.js"></script>
   </body>
 </html>
