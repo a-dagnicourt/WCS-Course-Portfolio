@@ -10,7 +10,11 @@
         let firstValue = +prompt('Première valeur ?');
         let operator = prompt('Un opérateur ?');
         let secondValue = +prompt('Seconde valeur ?');
-        console.log(firstValue + secondValue);
+        if (operator === "+") {
+            console.log(firstValue + secondValue);
+        } else {
+            console.log(firstValue - secondValue);
+        }
     </script>
 </body>
 </html>
