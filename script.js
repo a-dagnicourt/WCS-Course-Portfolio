@@ -61,12 +61,12 @@ function priceIsRight() {
         checkPrice(playerName, randomNumber);
     }
   }
-  console.log(randomNumber);
+  //   console.log(randomNumber);
   checkPrice(playerName, randomNumber);
 }
 
-const calculatorBtn = document.querySelector('#calculatorBtn');
-const priceIsRightBtn = document.querySelector('#priceIsRightBtn');
+const calculatorBtn = document.querySelector("#calculatorBtn");
+const priceIsRightBtn = document.querySelector("#priceIsRightBtn");
 
-calculatorBtn.addEventListener('click', calculator);
-priceIsRightBtn.addEventListener('click', priceIsRight);
+calculatorBtn.addEventListener("click", calculator);
+priceIsRightBtn.addEventListener("click", priceIsRight);
