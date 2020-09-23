@@ -7,35 +7,62 @@
   </head>
   <body>
     <script>
-      let firstValue = +prompt("Première valeur ?");
-      let operator = prompt("Un opérateur ?");
-      let secondValue = +prompt("Seconde valeur ?");
+      //   let firstValue = +prompt("Première valeur ?");
+      //   let operator = prompt("Un opérateur ?");
+      //   let secondValue = +prompt("Seconde valeur ?");
 
-      //   if (operator === "+") {
-      //     console.log(firstValue + secondValue);
-      //   } else {
-      //     console.log(firstValue - secondValue);
+      //   //   if (operator === "+") {
+      //   //     console.log(firstValue + secondValue);
+      //   //   } else {
+      //   //     console.log(firstValue - secondValue);
+      //   //   }
+
+      //   switch (operator) {
+      //     case "+":
+      //       console.log(firstValue + secondValue);
+      //       break;
+      //     case "-":
+      //       console.log(firstValue - secondValue);
+      //       break;
+      //     case "/":
+      //       console.log(firstValue / secondValue);
+      //       break;
+      //     case "*":
+      //       console.log(firstValue * secondValue);
+      //       break;
+      //     case "%":
+      //       console.log(firstValue % secondValue);
+      //       break;
+      //     default:
+      //       throw new Error("Invalid operator");
       //   }
 
-      switch (operator) {
-        case "+":
-          console.log(firstValue + secondValue);
-          break;
-        case "-":
-          console.log(firstValue - secondValue);
-          break;
-        case "/":
-          console.log(firstValue / secondValue);
-          break;
-        case "*":
-          console.log(firstValue * secondValue);
-          break;
-        case "%":
-          console.log(firstValue % secondValue);
-          break;
-        default:
-          throw new Error("Invalid operator");
+      //   Bonus Challenge
+      const playerName = prompt("Spartiate quel est votre nom ?");
+      const randomNumber = Math.floor(Math.random() * 100) + 1;
+      let playerNumber = prompt("Spartiate quel est votre prix ?!");
+      function checkPrice(p1, p2) {
+        switch (true) {
+          case p1 > p2:
+            console.log("Le prix est inférieur !");
+            playerNumber = prompt("Nouveau prix ?");
+            checkPrice(playerNumber, randomNumber);
+            break;
+          case p1 < p2:
+            console.log("Le prix est supérieur !");
+            playerNumber = prompt("Nouveau prix ?");
+            checkPrice(playerNumber, randomNumber);
+            break;
+          case p1 == p2:
+            console.log(`Juste prix !!! ${playerName} est le vainqueur !`);
+            break;
+          default:
+            throw new Error("Mauvaise entrée.");
+            checkPrice(playerNumber, randomNumber);
+        }
       }
+      //   console.warn(randomNumber);
+      checkPrice(playerNumber, randomNumber);
     </script>
   </body>
 </html>
