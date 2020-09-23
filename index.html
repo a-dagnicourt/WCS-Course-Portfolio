@@ -41,28 +41,35 @@
       const playerName = prompt("Spartiate quel est votre nom ?");
       const randomNumber = Math.floor(Math.random() * 100) + 1;
       let playerNumber = prompt("Spartiate quel est votre prix ?!");
-      function checkPrice(p1, p2) {
+      let countNumber = 1;
+
+      function checkPrice() {
         switch (true) {
-          case p1 > p2:
+          case +playerNumber > randomNumber:
             console.log("Le prix est inférieur !");
             playerNumber = prompt("Nouveau prix ?");
-            checkPrice(playerNumber, randomNumber);
+            countNumber += 1;
+            checkPrice();
             break;
-          case p1 < p2:
+          case +playerNumber < randomNumber:
             console.log("Le prix est supérieur !");
             playerNumber = prompt("Nouveau prix ?");
-            checkPrice(playerNumber, randomNumber);
+            countNumber += 1;
+            checkPrice();
             break;
-          case p1 == p2:
-            console.log(`Juste prix !!! ${playerName} est le vainqueur !`);
+          case +playerNumber === randomNumber:
+            console.log(
+              `Juste prix !!! ${playerName} gagne en ${countNumber} coups !`
+            );
             break;
           default:
             throw new Error("Mauvaise entrée.");
-            checkPrice(playerNumber, randomNumber);
+            countNumber += 1;
+            checkPrice();
         }
       }
-      //   console.warn(randomNumber);
-      checkPrice(playerNumber, randomNumber);
+      //   console.log(randomNumber);
+      checkPrice();
     </script>
   </body>
 </html>
