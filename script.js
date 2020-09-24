@@ -1,36 +1,52 @@
+// Menu
+
+const calculatorBtn = document.querySelector("#calculatorBtn");
+const priceIsRightBtn = document.querySelector("#priceIsRightBtn");
+const calculatorArticle = document.querySelector("#calculator");
+
+calculatorBtn.addEventListener("click", () => {
+  calculatorArticle.classList.toggle("hidden");
+});
+priceIsRightBtn.addEventListener("click", priceIsRight);
+
 //   Calculator
 
-function calculator() {
-  let firstValue = +prompt("Première valeur ?");
-  let operator = prompt("Un opérateur ?");
-  let secondValue = +prompt("Seconde valeur ?");
+let form = document.querySelector("#form");
+let submit = document.querySelector("#submit");
 
-  //   if (operator === "+") {
-  //     console.log(firstValue + secondValue);
-  //   } else {
-  //     console.log(firstValue - secondValue);
-  //   }
-
-  switch (operator) {
-    case "+":
-      console.log(firstValue + secondValue);
+submit.addEventListener("click", () => {
+  let firstValue = document.querySelector("#num1");
+  let operator = document.querySelector("#operator");
+  let secondValue = document.querySelector("#num2");
+  let resultDisplay = document.querySelector("#resultDisplay");
+  let result;
+  switch (operator.value) {
+    case "plus":
+      result = +firstValue.value + +secondValue.value;
       break;
-    case "-":
-      console.log(firstValue - secondValue);
+    case "minus":
+      result = +firstValue.value - +secondValue.value;
       break;
-    case "/":
-      console.log(firstValue / secondValue);
+    case "division":
+      result = +firstValue.value / +secondValue.value;
       break;
-    case "*":
-      console.log(firstValue * secondValue);
+    case "multiplication":
+      result = +firstValue.value * +secondValue.value;
       break;
-    case "%":
-      console.log(firstValue % secondValue);
+    case "modulo":
+      result = +firstValue.value % +secondValue.value;
       break;
     default:
-      throw new Error("Invalid operator");
+      result = "fail";
+    //   throw new Error("Invalid operator");
   }
-}
+
+  resultDisplay.innerHTML = result;
+});
+
+form.addEventListener("submit", (e) => {
+  e.preventDefault();
+});
 
 //   Bonus Challenge
 
@@ -64,9 +80,3 @@ function priceIsRight() {
   //   console.log(randomNumber);
   checkPrice(playerName, randomNumber);
 }
-
-const calculatorBtn = document.querySelector("#calculatorBtn");
-const priceIsRightBtn = document.querySelector("#priceIsRightBtn");
-
-calculatorBtn.addEventListener("click", calculator);
-priceIsRightBtn.addEventListener("click", priceIsRight);

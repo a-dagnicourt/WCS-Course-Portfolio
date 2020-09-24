@@ -7,32 +7,69 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <header>
-      <h1 class="mainTitle">Workshop JavaScript</h1>
-      <h2 class="subTitle">Simple Calculator</h2>
-    </header>
-    <main>
-      <div class="choiceBox">Choose your feature :</div>
-      <div class="buttonBox">
-        <button class="button" id="calculatorBtn">Calculator</button>
-        <button class="button" id="priceIsRightBtn">The price is right</button>
-      </div>
-    </main>
-    <footer>
-      <div class="footerDiv">
-        <a
-          href="https://www.wildcodeschool.com/fr-FR"
-          title="Wild Code School Website"
-          >Wild Code School</a
-        >
-      </div>
-      <div class="footerDiv">
-        <a href="https://github.com/a-dagnicourt" title="Dany's github"
-          >Alexandre "Dany" Dagnicourt</a
-        >
-      </div>
-      <div class="footerDiv">23/09/20</div>
-    </footer>
+    <div class="mainContent">
+      <header>
+        <h1 class="mainTitle">Workshop JavaScript</h1>
+        <h2 class="subTitle">Simple Calculator</h2>
+      </header>
+      <main>
+        <div class="selectPanel">
+          <div class="choiceBox">Choose your feature :</div>
+          <div class="buttonBox">
+            <button class="button" id="calculatorBtn">Calculator</button>
+            <button class="button" id="priceIsRightBtn">
+              The price is right
+            </button>
+          </div>
+        </div>
+        <article class="hidden" id="calculator">
+          <h1>Simple Calculator</h1>
+          <div class="formContainer">
+            <form id="form">
+              <div class="formBox">
+                <label for="num1">Chiffre 1</label>
+                <input type="number" name="num1" id="num1" />
+              </div>
+              <div class="formBox">
+                <label for="operator">Opérateur</label>
+                <select name="operator" id="operator">
+                  <option value="plus">+</option>
+                  <option value="minus">-</option>
+                  <option value="division">/</option>
+                  <option value="multiplication">*</option>
+                  <option value="modulo">%</option>
+                </select>
+              </div>
+              <div class="formBox">
+                <label for="num2">Chiffre 2</label>
+                <input type="number" name="num2" id="num2" />
+              </div>
+              <div class="formBox">
+                <button class="btn btn-primary submitBtn" id="submit">
+                  Calculer
+                </button>
+              </div>
+              <div class="formBox" id="resultDisplay"></div>
+            </form>
+          </div>
+        </article>
+      </main>
+      <footer>
+        <div class="footerDiv">
+          <a
+            href="https://www.wildcodeschool.com/fr-FR"
+            title="Wild Code School Website"
+            >Wild Code School</a
+          >
+        </div>
+        <div class="footerDiv">
+          <a href="https://github.com/a-dagnicourt" title="Dany's github"
+            >Alexandre "Dany" Dagnicourt</a
+          >
+        </div>
+        <div class="footerDiv">23/09/20</div>
+      </footer>
+    </div>
     <script src="script.js"></script>
   </body>
 </html>
