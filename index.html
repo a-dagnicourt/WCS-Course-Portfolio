@@ -12,11 +12,16 @@
   </head>
   <body>
     <div class="mainContainer">
-      <header class="shadowDrop">
+      <!-- Header -->
+
+      <header class="shadowDrop bgGold">
         <h1 class="mainTitle t1">Workshop JavaScript</h1>
         <h2 class="subTitle t2">Simple Calculator</h2>
       </header>
-      <main>
+
+      <!-- Main -->
+
+      <main class="bg0a">
         <div class="selectPanel">
           <div class="choiceBox t2">Choose your feature :</div>
           <div class="buttonBox">
@@ -28,10 +33,13 @@
             </button>
           </div>
         </div>
-        <article class="hidden" id="calculator">
+
+        <!-- Simple Calculator -->
+
+        <article class="hidden bg33" id="calculator">
           <h1 class="t2">Simple Calculator</h1>
           <div class="formContainer">
-            <form id="form">
+            <form id="calcForm">
               <div class="formBox">
                 <label for="num1" class="t3">Chiffre 1</label>
                 <input class="borderRB" type="text" name="num1" id="num1" />
@@ -51,16 +59,59 @@
                 <input class="borderRB" type="text" name="num2" id="num2" />
               </div>
               <div class="formBox">
-                <button class="btn btn-primary submitBtn borderRB" id="submit">
+                <button
+                  class="btn btn-primary submitBtn borderRB"
+                  id="calcSubmit"
+                >
                   Calculer
                 </button>
               </div>
-              <div class="formBox borderRB" id="resultDisplay"></div>
+              <div class="formBox borderRB resultDisplay" id="resultDisplay"></div>
+            </form>
+          </div>
+        </article>
+
+        <!-- The Price is Right -->
+
+        <article class="hidden bg66" id="priceRight">
+          <h1 class="t2">The Price is Right</h1>
+          <div class="formContainer">
+            <form id="priceForm">
+              <div class="formBox">
+                <label for="nameEntry" class="t3">Votre nom</label>
+                <input
+                  class="borderRB"
+                  type="text"
+                  name="nameEntry"
+                  id="nameEntry"
+                />
+              </div>
+              <div class="formBox">
+                <label for="priceEntry" class="t3">Votre prix</label>
+                <input
+                  class="borderRB"
+                  type="number"
+                  name="priceEntry"
+                  id="priceEntry"
+                />
+              </div>
+              <div class="formBox">
+                <button
+                  class="btn btn-primary submitBtn borderRB"
+                  id="priceSubmit"
+                >
+                  Essayer
+                </button>
+              </div>
+              <div class="formBox borderRB resultDisplay" id="priceDisplay"></div>
             </form>
           </div>
         </article>
       </main>
-      <footer>
+
+      <!-- Footer -->
+
+      <footer class="bgGold">
         <div class="footerDiv">
           <a
             class="link--footer"

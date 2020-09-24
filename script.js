@@ -3,22 +3,25 @@
 const calculatorBtn = document.querySelector("#calculatorBtn");
 const priceIsRightBtn = document.querySelector("#priceIsRightBtn");
 const calculatorArticle = document.querySelector("#calculator");
+const priceArticle = document.querySelector("#priceRight");
 
 calculatorBtn.addEventListener("click", () => {
   calculatorArticle.classList.toggle("hidden");
 });
-priceIsRightBtn.addEventListener("click", priceIsRight);
+priceIsRightBtn.addEventListener("click", () => {
+  priceArticle.classList.toggle("hidden");
+});
 
 //   Calculator
 
-let form = document.querySelector("#form");
-let submit = document.querySelector("#submit");
+let calcForm = document.querySelector("#calcForm");
+let calcSubmit = document.querySelector("#calcSubmit");
 
-submit.addEventListener("click", () => {
-  let firstValue = document.querySelector("#num1");
-  let operator = document.querySelector("#operator");
-  let secondValue = document.querySelector("#num2");
-  let resultDisplay = document.querySelector("#resultDisplay");
+calcSubmit.addEventListener("click", () => {
+  const firstValue = document.querySelector("#num1");
+  const operator = document.querySelector("#operator");
+  const secondValue = document.querySelector("#num2");
+  const resultDisplay = document.querySelector("#resultDisplay");
   let result;
   switch (operator.value) {
     case "plus":
@@ -44,39 +47,40 @@ submit.addEventListener("click", () => {
   resultDisplay.innerHTML = result;
 });
 
-form.addEventListener("submit", (e) => {
+calcForm.addEventListener("submit", (e) => {
   e.preventDefault();
 });
 
 //   Bonus Challenge
 
-function priceIsRight() {
-  const playerName = prompt("Spartiate quel est votre nom ?");
-  const randomNumber = Math.floor(Math.random() * 100) + 1;
-  let countNumber = 0;
+let priceForm = document.querySelector("#priceForm");
+let priceSubmit = document.querySelector("#priceSubmit");
 
-  function checkPrice(playerName, randomNumber) {
-    let playerNumber = prompt("Spartiate quel est votre prix ?!");
-    countNumber++;
-    switch (true) {
-      case +playerNumber > randomNumber:
-        console.log("Le prix est inférieur !");
-        checkPrice(playerName, randomNumber);
-        break;
-      case +playerNumber < randomNumber:
-        console.log("Le prix est supérieur !");
-        checkPrice(playerName, randomNumber);
-        break;
-      case +playerNumber === randomNumber:
-        console.log(
-          `Juste prix !!! ${playerName} gagne en ${countNumber} coups !`
-        );
-        break;
-      default:
-        throw new Error("Mauvaise entrée.");
-        checkPrice(playerName, randomNumber);
-    }
+const randomNumber = Math.floor(Math.random() * 100) + 1;
+let countNumber = 0;
+
+priceSubmit.addEventListener("click", () => {
+  const nameEntry = document.querySelector("#nameEntry");
+  const priceEntry = document.querySelector("#priceEntry");
+  const priceDisplay = document.querySelector("#priceDisplay");
+  countNumber++;
+  switch (true) {
+    case +priceEntry.value > +randomNumber:
+      priceDisplay.innerHTML = "Le prix est inférieur !";
+
+      break;
+    case +priceEntry.value < +randomNumber:
+      priceDisplay.innerHTML = "Le prix est supérieur !";
+
+      break;
+    case +priceEntry.value === +randomNumber:
+      priceDisplay.innerHTML = `Juste prix ! ${nameEntry.value} gagne en ${countNumber} coups !`;
+      break;
+    default:
+      priceDisplay.innerHTML = "Mauvaise entrée, recommencez.";
   }
-  //   console.log(randomNumber);
-  checkPrice(playerName, randomNumber);
-}
+});
+
+priceForm.addEventListener("submit", (e) => {
+  e.preventDefault();
+});
