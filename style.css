@@ -1,3 +1,14 @@
+html {
+  font-size: 16px;
+  font-family: Poppins, Verdana, Geneva, Tahoma, sans-serif;
+}
+
+@media screen and (max-width: 768px) {
+  html {
+    font-size: 12px;
+  }
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -5,9 +16,57 @@
   /* border: 1px solid red; */
 }
 
+/* General style */
+
+.borderRB {
+  border-style: solid;
+  border-width: 0px 3px 3px 0px;
+  border-color: #fbd34f;
+  border-radius: 0px 0px 0px 0px;
+  background-color: #0a0a0a;
+  color: #fbd34f;
+}
+
+.borderRB:hover {
+  border: 0;
+  background-color: #fbd34f;
+  color: #0a0a0a;
+  transition: ease-in-out 500ms;
+}
+
+.borderRB:focus {
+  outline: 0;
+}
+
+.link--footer {
+  color: #0a0a0a;
+  text-decoration: none;
+}
+
+.link--footer:hover {
+  background: linear-gradient(180deg, transparent 40%, white 0);
+}
+
 .hidden {
   display: none;
 }
+
+.t1 {
+  font-size: 3rem;
+  font-weight: 600;
+}
+
+.t2 {
+  font-size: 2rem;
+  font-weight: 500;
+}
+
+.t3 {
+  font-size: 1.5rem;
+  font-weight: 400;
+}
+
+/* Specific style */
 
 header,
 footer,
@@ -16,23 +75,37 @@ main {
   justify-content: center;
 }
 
-.mainContent {
+.mainContainer {
+  display: flex;
+  flex-direction: column;
   min-height: 100vh;
 }
+
 header {
   display: flex;
   flex-direction: column;
   text-align: center;
-  min-height: 100px;
-  height: 20%;
+  height: 20vh;
+  padding: 2rem;
+  background-color: #fbd34f;
+}
+
+footer {
+  display: flex;
+  justify-content: space-between;
+  height: 10vh;
+  background-color: #fbd34f;
+  padding: 2rem;
 }
 
 main {
   display: flex;
   flex-direction: column;
   text-align: center;
-  min-height: 300px;
-  height: 70%;
+  min-height: 70vh;
+  background-color: #0a0a0a;
+  color: white;
+  padding-top: 2rem;
 }
 
 .buttonBox {
@@ -43,58 +116,61 @@ main {
 
 .button {
   display: flex;
-  min-width: 200px;
+  width: 20vw;
   min-height: 100px;
   justify-content: center;
   align-items: center;
   margin: 50px;
-}
-
-footer {
-  display: flex;
-  justify-content: space-between;
-  min-height: 50px;
-  height: 10%;
-  margin-top: 50px;
+  font-size: 1.3rem;
 }
 .footerDiv {
   display: flex;
-  min-width: 200px;
+  width: 30vw;
   justify-content: center;
   align-items: center;
 }
 
-#calculator h1 {
-  padding: 5rem;
-  font-size: 3rem;
+.footerDiv * {
+  text-align: center;
+}
+
+/* Calculator Article */
+
+#calculator {
+  background-color: #333333;
+  padding: 2rem;
 }
 
 #calculator .formContainer {
   display: flex;
   justify-content: center;
+  padding-top: 2rem;
 }
 
 #calculator .formBox {
   display: flex;
   justify-content: flex-start;
   margin: 1rem;
-  height: 2rem;
+  height: 2.5rem;
 }
 
 #calculator label {
-  min-width: 10rem;
+  min-width: 20vw;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
 #calculator input,
-select {
-  min-width: 15rem;
+#calculator select {
+  min-width: 30vw;
+  text-align-last: center;
+  font-size: 1.5rem;
 }
 
 #calculator .submitBtn {
   width: 100%;
+  font-size: 1.5rem;
 }
 
 #calculator #resultDisplay {
@@ -102,7 +178,5 @@ select {
   display: flex;
   justify-content: center;
   align-items: center;
-  border: 1px solid gray;
-  background-color: #e5e5e5;
   font-size: 2rem;
 }

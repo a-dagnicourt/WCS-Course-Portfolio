@@ -5,34 +5,40 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Simple Calculator</title>
     <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Poppins"
+    />
   </head>
   <body>
-    <div class="mainContent">
-      <header>
-        <h1 class="mainTitle">Workshop JavaScript</h1>
-        <h2 class="subTitle">Simple Calculator</h2>
+    <div class="mainContainer">
+      <header class="shadowDrop">
+        <h1 class="mainTitle t1">Workshop JavaScript</h1>
+        <h2 class="subTitle t2">Simple Calculator</h2>
       </header>
       <main>
         <div class="selectPanel">
-          <div class="choiceBox">Choose your feature :</div>
+          <div class="choiceBox t2">Choose your feature :</div>
           <div class="buttonBox">
-            <button class="button" id="calculatorBtn">Calculator</button>
-            <button class="button" id="priceIsRightBtn">
+            <button class="button borderRB" id="calculatorBtn">
+              Calculator
+            </button>
+            <button class="button borderRB" id="priceIsRightBtn">
               The price is right
             </button>
           </div>
         </div>
         <article class="hidden" id="calculator">
-          <h1>Simple Calculator</h1>
+          <h1 class="t2">Simple Calculator</h1>
           <div class="formContainer">
             <form id="form">
               <div class="formBox">
-                <label for="num1">Chiffre 1</label>
-                <input type="number" name="num1" id="num1" />
+                <label for="num1" class="t3">Chiffre 1</label>
+                <input class="borderRB" type="text" name="num1" id="num1" />
               </div>
               <div class="formBox">
-                <label for="operator">Opérateur</label>
-                <select name="operator" id="operator">
+                <label for="operator" class="t3">Opérateur</label>
+                <select class="borderRB" name="operator" id="operator">
                   <option value="plus">+</option>
                   <option value="minus">-</option>
                   <option value="division">/</option>
@@ -41,15 +47,15 @@
                 </select>
               </div>
               <div class="formBox">
-                <label for="num2">Chiffre 2</label>
-                <input type="number" name="num2" id="num2" />
+                <label for="num2" class="t3">Chiffre 2</label>
+                <input class="borderRB" type="text" name="num2" id="num2" />
               </div>
               <div class="formBox">
-                <button class="btn btn-primary submitBtn" id="submit">
+                <button class="btn btn-primary submitBtn borderRB" id="submit">
                   Calculer
                 </button>
               </div>
-              <div class="formBox" id="resultDisplay"></div>
+              <div class="formBox borderRB" id="resultDisplay"></div>
             </form>
           </div>
         </article>
@@ -57,17 +63,23 @@
       <footer>
         <div class="footerDiv">
           <a
+            class="link--footer"
             href="https://www.wildcodeschool.com/fr-FR"
             title="Wild Code School Website"
             >Wild Code School</a
           >
         </div>
         <div class="footerDiv">
-          <a href="https://github.com/a-dagnicourt" title="Dany's github"
+          <a
+            class="link--footer"
+            href="https://github.com/a-dagnicourt"
+            title="Dany's github"
             >Alexandre "Dany" Dagnicourt</a
           >
         </div>
-        <div class="footerDiv">23/09/20</div>
+        <div class="footerDiv">
+          <span>23/09/20</span>
+        </div>
       </footer>
     </div>
     <script src="script.js"></script>
