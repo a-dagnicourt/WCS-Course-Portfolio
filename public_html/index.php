@@ -30,63 +30,10 @@
       </div>
 
       <!-- Simple Calculator -->
-
-      <article class="hidden bg33" id="calculator">
-        <h1 class="t2">Simple Calculator</h1>
-        <div class="formContainer">
-          <form id="calcForm">
-            <div class="formBox">
-              <label for="num1" class="t3">Chiffre 1</label>
-              <input class="borderRB" type="text" name="num1" id="num1" />
-            </div>
-            <div class="formBox">
-              <label for="operator" class="t3">Opérateur</label>
-              <select class="borderRB" name="operator" id="operator">
-                <option value="plus">+</option>
-                <option value="minus">-</option>
-                <option value="division">/</option>
-                <option value="multiplication">*</option>
-                <option value="modulo">%</option>
-              </select>
-            </div>
-            <div class="formBox">
-              <label for="num2" class="t3">Chiffre 2</label>
-              <input class="borderRB" type="text" name="num2" id="num2" />
-            </div>
-            <div class="formBox">
-              <button class="btn btn-primary submitBtn borderRB" id="calcSubmit">
-                Calculer
-              </button>
-            </div>
-            <div class="formBox borderRB resultDisplay" id="resultDisplay"></div>
-          </form>
-        </div>
-      </article>
+      <?php include('../ressources/workshops/simple-calc.php'); ?>
 
       <!-- The Price is Right -->
-
-      <article class="hidden bg66" id="priceRight">
-        <h1 class="t2">The Price is Right</h1>
-        <div class="formContainer">
-          <form id="priceForm">
-            <div class="formBox">
-              <label for="nameEntry" class="t3">Votre nom</label>
-              <input class="borderRB" type="text" name="nameEntry" id="nameEntry" />
-            </div>
-            <div class="formBox">
-              <label for="priceEntry" class="t3">Votre prix</label>
-              <input class="borderRB" type="number" name="priceEntry" id="priceEntry" />
-            </div>
-            <div class="formBox">
-              <button class="btn btn-primary submitBtn borderRB" id="priceSubmit">
-                Essayer
-              </button>
-            </div>
-            <div class="formBox borderRB resultDisplay" id="priceDisplay"></div>
-          </form>
-        </div>
-      </article>
-    </main>
+      <?php include('../ressources/workshops/price-right.php'); ?>
 
     <!-- Footer -->
     <?php include('../ressources/templates/_footer.php'); ?>
