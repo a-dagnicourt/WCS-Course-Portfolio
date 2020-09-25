@@ -15,15 +15,14 @@
     <?php include('../ressources/templates/_header.php'); ?>
 
     <!-- Main -->
-
     <main class="bg0a">
       <div class="selectPanel">
         <div class="choiceBox t2">Choose your feature :</div>
         <div class="buttonBox">
-          <button class="button borderRB" id="calculatorBtn">
+          <button class="button borderRB t3" id="calculatorBtn">
             Calculator
           </button>
-          <button class="button borderRB" id="priceIsRightBtn">
+          <button class="button borderRB t3" id="priceIsRightBtn">
             The price is right
           </button>
         </div>
