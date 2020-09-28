@@ -3,16 +3,16 @@
     <div class="formContainer">
         <form id="priceForm">
             <div class="formBox">
-                <label for="nameEntry" class="t3">Votre nom</label>
+                <label for="nameEntry" class="t3">Your name</label>
                 <input class="borderRB" type="text" name="nameEntry" id="nameEntry" />
             </div>
             <div class="formBox">
-                <label for="priceEntry" class="t3">Votre prix</label>
+                <label for="priceEntry" class="t3">Your price</label>
                 <input class="borderRB" type="number" name="priceEntry" id="priceEntry" />
             </div>
             <div class="formBox">
                 <button class="btn btn-primary submitBtn borderRB" id="priceSubmit">
-                    Essayer
+                    Try
                 </button>
             </div>
             <div class="formBox borderRB resultDisplay" id="priceDisplay"></div>
